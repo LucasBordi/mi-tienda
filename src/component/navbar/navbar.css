@@ -4,7 +4,7 @@
 }
 
 .barra {
-    padding-left: 120px;
+    padding-left: 50px;
 }
 
 .busqueda {
@@ -21,4 +21,10 @@
     padding: .3125rem;
     font-size: 1.25rem;
     margin-right: 1rem;
+}
+.icon-cart{
+    color: green;
+    background-color: transparent;
+    height: 30px;
+    width: 150px;
 }

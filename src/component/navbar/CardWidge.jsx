@@ -1,7 +1,9 @@
-import './navbar.css';
+import './Navbar.css';
 
-export const Cardwidge = () =>{
-return(    
-    <img src="../../../imagenes/Marca.jpg" className="logo"/>
-)
+export const Cardwidge = () => {
+    return (
+        <>
+            <button className="icon-cart"> Ver carrito</button>
+        </>
+    )
 }

@@ -1,9 +1,21 @@
-import './buttonComponent.css';
+import './ButtonComponent.css';
 
-export const buttonComponent = () => {
+export const ButtonComponent = ({ text }) => {
+
     return (
-        <button className="Agregar">
-            agregar al carrito
+        <button className="agregar">
+            {text}
         </button>
+    )
+}
+
+export const ButtonSigno = ({ }) => {
+
+    return (
+        <section>
+            <button className="signo">{" + "}</button>
+
+            <button className="signo">{" - "}</button>
+        </section>
     )
 }

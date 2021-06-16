@@ -1,15 +1,15 @@
 import './App.css';
 import { NavbarComponent } from './component/navbar/navbar';
-import { HomeConteiner } from './component/conteiner/HomeConteiner';
+import {HomeConteiner} from './component/conteiner/ItemListConteiner';
 
 
 function App() {
   return (
     <>
-      <NavbarComponent />
-      <HomeConteiner />
+    <NavbarComponent/>
+    <HomeConteiner greeting={"hola, ¡ BIENVENIDOS a mi APP !"}/>
     </>
-  );
+     );
 }
 
 export default App;

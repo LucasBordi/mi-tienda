@@ -1,8 +1,15 @@
-.Agregar{
-    background-color: red;
+.buttonAgregar{
+    background-color: grey;
     border-radius: 15px;
-    color: black;
-    width: 100px;
-    height: 100px;
-    font-size: 15px;
+    color: gold;
+    width: 300px;
+    height: 50px;
+}
+
+.signo{
+    width: 50px;
+    height: 50px;
+    margin-top: 15px;
+    margin-right: 10px;
+
 }
