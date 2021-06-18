@@ -1,4 +1,4 @@
-import './ButtonComponent.css';
+import './buttonComponent.css';
 
 export const ButtonComponent = ({ text }) => {
 
@@ -6,16 +6,5 @@ export const ButtonComponent = ({ text }) => {
         <button className="agregar">
             {text}
         </button>
-    )
-}
-
-export const ButtonSigno = ({ }) => {
-
-    return (
-        <section>
-            <button className="signo">{" + "}</button>
-
-            <button className="signo">{" - "}</button>
-        </section>
     )
 }
