@@ -1,76 +1,62 @@
-import React, { useState } from 'react';
-import './ItemCount.css';
+import { useState } from 'react';
+import './Index.css'
 
-
-const lista = { nombre: `Producto-1`, precio: 3000, stock: 15 };
-export const ItemCount = () => {
-
-
+export function ItemCount({ stock, initial }) {
+    const lista = { nombre: `Producto-1`, precio: 3000 };
     const [counter, setCounter] = useState(1)
-
     const sumar = () => {
-        if (counter < lista.stock) {
+        if (counter < stock) {
             setCounter(counter + 1)
-            console.log(`esta sumando ${counter}`);
+            console.log(`esta sumando + ${counter}`);
         }
-        
-        console.log(`esto esta en el stock ${lista.stock}`);
+        stock--;
+        console.log(`Esto es el counter ${counter}`);
     }
-
     const restar = () => {
         if (counter > 1) {
             setCounter(counter - 1)
             console.log(`esta restando ${counter}`);
         }
-        
-        console.log(`esto esta en el stock ${lista.stock}`);
-
+        stock++
+        console.log(`asi esta el stock ${stock}`);
     }
-
     const textNumer = (e) => {
-
         let value = (e.target.value)
-        if (value > lista.stock) {
-            setCounter(lista.stock)
+        if (value > stock) {
+            setCounter(stock)
         }
         else {
             setCounter(value)
             console.log(setCounter);
         }
-
     }
     const onAdd = () => {
-        console.log(`Tenes ${counter} productos agregados al carrito`);
+        console.log("se agregó la siguiente cantidad de productos al carrito: " + counter);
+        console.log("stock quedo en: " + (stock - counter))
     }
-
-    if (lista.stock == (0 || [])) {
+    if (stock == 0) {
         return (
             <>
                 <div className="card">
-
                     <h2>{lista.nombre}</h2>
-                    <div>{lista.precio}</div>
+                    <div>${lista.precio}</div>
                 </div>
             </>
         )
-
     }
-
-    return (
-        <>
-            <div className="card">
-
-                <h2>{lista.nombre}</h2>
-                <div>{lista.precio}</div>
-
-                <button className="input-group-list" onClick={sumar}> + </button>
-                <input type="number" className="input-group" value={counter} stock={lista.stock}
-                    onChange={textNumer} initial={1} ></input>
-                <button className="input-group-list" onClick={restar}> - </button>
-                <button onClick={onAdd}>Agregar al carrito</button>
-
-            </div>
-        </>
-    )
-
+    if (stock > 0) {
+        return (
+            <>
+                <div className="card">
+                    <div>{lista.nombre}</div>
+                    <div>${lista.precio}</div>
+                    <button className="input-group-list" onClick={sumar}> + </button>
+                    <input type="number" className="input-group" value={counter}
+                        onChange={textNumer} initial={initial}></input>
+                    <button className="input-group-list" onClick={restar}> - </button>
+                    <button className="button-agregar" onClick={onAdd}>Agregar al carrito</button>
+                </div>
+            </>
+        )
+    }
 }

@@ -15,14 +15,15 @@
     background-color: black;
 }
 
-.text {
+.texto {
     color: green;
     text-align: center;
     padding: .3125rem;
     font-size: 1.25rem;
     margin-right: 1rem;
 }
-.icon-cart{
+
+.icon-cart {
     color: green;
     background-color: transparent;
     height: 30px;

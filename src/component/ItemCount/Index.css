@@ -6,3 +6,12 @@
     color: black;
     background-color: chartreuse;
 }
+.text{
+    color: black;
+    font-size: 15px;
+}
+.button-agregar{
+    background-color: blue;
+    color: white;
+    font-size: 15px;
+}
