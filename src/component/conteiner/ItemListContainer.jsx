@@ -1,6 +1,7 @@
 import './Index.css';
 import logo from '../../logo.svg';
 import { ItemCount } from '../itemcount/ItemCount';
+import { Items } from './../items/ItemList';
 
 export const HomeConteiner = (props) => {
   return (
@@ -9,6 +10,7 @@ export const HomeConteiner = (props) => {
         <div>{props.greeting}</div>
         <header className="App-header">
           <ItemCount stock="10" initial="1" />
+          <Items />
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.

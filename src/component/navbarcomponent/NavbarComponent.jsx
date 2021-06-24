@@ -1,5 +1,5 @@
 import './Index.css';
-import { Cardwidge } from "./CartWidget"
+import { Cardwidge } from "../cartwidget/CartWidget"
 import '../../fonts/iconmoon.css';
 
 export const NavbarComponent = () => {

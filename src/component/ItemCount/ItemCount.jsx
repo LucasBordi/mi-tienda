@@ -7,18 +7,18 @@ export function ItemCount({ stock, initial }) {
     const sumar = () => {
         if (counter < stock) {
             setCounter(counter + 1)
-            console.log(`esta sumando + ${counter}`);
+            console.log(`esta sumando ${counter}`);
         }
         stock--;
-        console.log(`Esto es el counter ${counter}`);
+        console.log(`Esto es el counter ${stock}`);
     }
     const restar = () => {
         if (counter > 1) {
             setCounter(counter - 1)
-            console.log(`esta restando ${counter}`);
+            console.log(`estas restando ${counter}`);
         }
-        stock++
-        console.log(`asi esta el stock ${stock}`);
+        stock ++
+        console.log(`esto esta en el menos ${counter}`);
     }
     const textNumer = (e) => {
         let value = (e.target.value)
