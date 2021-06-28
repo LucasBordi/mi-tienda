@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import './Index.css'
+import './ItemCount.css'
 
 export function ItemCount({ stock, initial }) {
-    const lista = { nombre: `Producto-1`, precio: 3000 };
+
     const [counter, setCounter] = useState(1)
     const sumar = () => {
         if (counter < stock) {
@@ -37,9 +37,8 @@ export function ItemCount({ stock, initial }) {
     if (stock == 0) {
         return (
             <>
-                <div className="card">
-                    <h2>{lista.nombre}</h2>
-                    <div>${lista.precio}</div>
+                <div className="">
+                    <div>No disponemos de stock por el momento</div>
                 </div>
             </>
         )
@@ -47,13 +46,11 @@ export function ItemCount({ stock, initial }) {
     if (stock > 0) {
         return (
             <>
-                <div className="card">
-                    <div>{lista.nombre}</div>
-                    <div>${lista.precio}</div>
-                    <button className="input-group-list" onClick={sumar}> + </button>
-                    <input type="number" className="input-group" value={counter}
+                <div className="">
+                    <button className="input" onClick={sumar}> + </button>
+                    <input type="number" className="input" value={counter}
                         onChange={textNumer} initial={initial}></input>
-                    <button className="input-group-list" onClick={restar}> - </button>
+                    <button className="input" onClick={restar}> - </button>
                     <button className="button-agregar" onClick={onAdd}>Agregar al carrito</button>
                 </div>
             </>

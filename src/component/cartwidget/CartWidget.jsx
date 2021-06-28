@@ -1,4 +1,4 @@
-import './Index.css';
+import './CartWidget.css';
 
 export const Cardwidge = () => {
     return (

@@ -1,4 +1,4 @@
-import './buttonComponent.css';
+import './ButtonComponent.css';
 
 export const ButtonComponent = ({ text }) => {
     return (
