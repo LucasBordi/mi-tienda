@@ -4,83 +4,95 @@
       "title": "Perfume Lavan",
       "pictureUrl": "../../../imagenes/Perfume-lavvan.jpeg",
       "price": 2000,
-      "stock": 10
+      "stock": 10,
+      "description":"sdsadsgadhasjdhsjdhsajkhdhdhddfdsfdsfkdsjfggewhewgwgerfjhsdggwejkgwekwekj"
     },
     {
       "id": 2,
       "title": "Perfume Hombre",
       "pictureUrl": "../../../imagenes/Perfume-Kaika-hombre.jpeg",
       "price": 3000,
-      "stock": 15
+      "stock": 15,
+      "description":"sdsadsgadhasjdhsjdhsajkhdhdhddfdsfdsfkdsjfggewhewgwgerfjhsdggwejkgwekwekj"
     },
     {
       "id": 3,
       "title": "Perfume Mujer",
       "pictureUrl": "../../../imagenes/Perfume-Kaika-mujer.jpeg",
       "price": 3500,
-      "stock": 10
+      "stock": 20,
+      "description":"sdsadsgadhasjdhsjdhsajkhdhdhddfdsfdsfkdsjfggewhewgwgerfjhsdggwejkgwekwekj"
     },
     {
       "id": 4,
       "title": "Crema Ekos",
       "pictureUrl": "../../../imagenes/Crema-Ekos.jpeg",
       "price": 3500,
-      "stock": 10
+      "stock": 5,
+      "description":"sdsadsgadhasjdhsjdhsajkhdhdhddfdsfdsfkdsjfggewhewgwgerfjhsdggwejkgwekwekj"
     },
     {
       "id": 5,
       "title": "Crema Ekos 2",
       "pictureUrl": "../../../imagenes/Crema-Ekos-2.jpeg",
       "price": 3500,
-      "stock": 10
+      "stock": 10,
+      "description":"sdsadsgadhasjdhsjdhsajkhdhdhddfdsfdsfkdsjfggewhewgwgerfjhsdggwejkgwekwekj"
     },
     {
       "id": 6,
       "title": "Perfume Kaika Oceano",
       "pictureUrl": "../../../imagenes/Perfume-kaika-oceano.jpeg",
       "price": 3500,
-      "stock": 10
+      "stock": 10,
+      "description":"sdsadsgadhasjdhsjdhsajkhdhdhddfdsfdsfkdsjfggewhewgwgerfjhsdggwejkgwekwekj"
     },
     {
       "id": 7,
       "title": "Perfume Mujer",
       "pictureUrl": "../../../imagenes/Perfume-marron.jpeg",
       "price": 3500,
-      "stock": 10
+      "stock": 10,
+      "description":"sdsadsgadhasjdhsjdhsajkhdhdhddfdsfdsfkdsjfggewhewgwgerfjhsdggwejkgwekwekj"
     },
     {
       "id": 8,
       "title": "Perfume Mujer Celeste",
       "pictureUrl": "../../../imagenes/Perfume-mujer-celeste.jpeg",
       "price": 3500,
-      "stock": 10
+      "stock": 11,
+      "description":"sdsadsgadhasjdhsjdhsajkhdhdhddfdsfdsfkdsjfggewhewgwgerfjhsdggwejkgwekwekj"
     },
     {
       "id": 9,
       "title": "Perfume Hombre",
       "pictureUrl": "../../../imagenes/Perfume-verde.jpeg",
       "price": 3500,
-      "stock": 10
+      "stock": 14,
+      "description":"sdsadsgadhasjdhsjdhsajkhdhdhddfdsfdsfkdsjfggewhewgwgerfjhsdggwejkgwekwekj"
     },
     {
       "id": 10,
       "title": "Jabon Natural",
       "pictureUrl": "../../../imagenes/jabon-natural.jpeg",
       "price": 3500,
-      "stock": 10
+      "stock": 4,
+      "description":"sdsadsgadhasjdhsjdhsajkhdhdhddfdsfdsfkdsjfggewhewgwgerfjhsdggwejkgwekwekj"
     },
     {
       "id": 11,
       "title": "Labial Becca",
       "pictureUrl": "../../../imagenes/Labial-becca.jpeg",
       "price": 3500,
-      "stock": 10
+      "stock": 12,
+      "description":"sdsadsgadhasjdhsjdhsajkhdhdhddfdsfdsfkdsjfggewhewgwgerfjhsdggwejkgwekwekj"
     },
     {
       "id": 12,
       "title": "Perfume Florales",
       "pictureUrl": "../../../imagenes/Esencia-floral.jpeg",
       "price": 3500,
-      "stock": 10
+      "stock": 10,
+      "description":"sdsadsgadhasjdhsjdhsajkhdhdhddfdsfdsfkdsjfggewhewgwgerfjhsdggwejkgwekwekj"
     }
   ]

@@ -6,7 +6,7 @@ import './ItemsList.css';
 export function Items() {
   const [productos, setProductos] = useState([]);
   useEffect(() => {
-    fetch("json/products.json")
+    fetch('json/products.json')
       .then((response) => response.json())
       .then((datos) => {
         setTimeout(() => {
@@ -22,7 +22,8 @@ export function Items() {
           return (
             <>
               <span key={index}>
-                <Item id={element.id} title={element.title} img={element.pictureUrl} price={element.price} stock={element.stock} />
+                <Item id={element.id} title={element.title} img={element.pictureUrl}
+                  price={element.price} stock={element.stock} />
               </span>
             </>
           )
