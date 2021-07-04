@@ -34,7 +34,7 @@ export function ItemCount({ stock, initial }) {
         console.log("se agregó la siguiente cantidad de productos al carrito: " + counter);
         console.log("stock quedo en: " + (stock - counter))
     }
-    if (stock === 0) {
+    if (stock == 0) {
         return (
             <>
                 <div className="">
