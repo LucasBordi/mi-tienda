@@ -1,31 +1,37 @@
 import { useState, useEffect } from 'react';
 import { ItemDetail } from '../itemdetail/ItemDetail';
 import './ItemDetailContainer.css';
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
 
 export const ItemDetailContainer = () => {
-    const { products_id } = useParams();
-    const [item, setItem] = useState([]);
+    const { productos_id } = useParams()
+    const [productos, setProductos] = useState([{ productos_id }]);
     useEffect(() => {
-        fetch('json/products.json')
-            .then(data => data.json())
-            .then(data => setItem(data))
-        console.log(item);
-        console.log(products_id);
-    }, []);
+        fetch(`json/products.json`)
+            .then(response => response.json())
+            .then(response => setProductos(response[{}]))
+        console.log(productos);
+        console.log({ productos_id });
+    }, [{ productos_id }]);
 
     return (
-        <div className="container row col-12">
-        {
-            item.map(element => {
-                return (
-                    <ItemDetail title={element.title} price={element.price}
-                        stock={element.stock} pictureUrl={element.pictureUrl}
-                        description={element.description} />
-                )
-            }
-            )
-        }
-        </div>
+        <>
+            <div className="container row col-12">
+                {
+                    productos.map((element, index) => {
+                        return (
+                            <>
+                                <span key={index}>
+                                    <ItemDetail id={element.id} title={element.title} price={element.price}
+                                        stock={element.stock} img={element.pictureUrl}
+                                        description={element.description} />
+                                </span>
+                            </>
+                        )
+                    }
+                    )
+                }
+            </div>
+        </>
     )
 }
