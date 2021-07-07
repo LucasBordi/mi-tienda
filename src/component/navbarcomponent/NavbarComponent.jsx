@@ -25,7 +25,7 @@ export const NavbarComponent = () => {
                             aria-disabled="true">Contactos</Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="../Carrito" className="nav-link texto icon-cart " tabindex="-1" aria-disabled="true"> Carrito</Link>
+                        <Link to={`../carrito`} className="nav-link texto icon-cart " tabindex="-1" aria-disabled="true"> Carrito</Link>
                     </li>
                 </ul>
                 <form className="busqueda form-inline my-2 my-lg-0">

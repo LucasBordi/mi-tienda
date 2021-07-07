@@ -1,59 +1,57 @@
 import { useState } from 'react';
 import './ItemCount.css'
+import { Link } from 'react-router-dom';
 
-export function ItemCount({ stock, initial }) {
+export function ItemCount({ stock, initial, onAdd }) {
 
-    const [counter, setCounter] = useState(1)
+    const [counter, setCounter] = useState(initial)
+
     const sumar = () => {
         if (counter < stock) {
             setCounter(counter + 1)
             console.log(`esta sumando ${counter}`);
         }
-        stock--;
-        console.log(`Esto es el counter ${stock}`);
     }
     const restar = () => {
         if (counter > 1) {
             setCounter(counter - 1)
             console.log(`estas restando ${counter}`);
         }
-        stock ++
+        stock++
         console.log(`esto esta en el menos ${counter}`);
     }
-    const textNumer = (e) => {
-        let value = (e.target.value)
-        if (value > stock) {
-            setCounter(stock)
-        }
-        else {
-            setCounter(value)
-            console.log(setCounter);
+
+    const onInputChange = (e) => {
+        const inputValue = e.target.value;
+        if (inputValue > stock) {
+            setCounter(stock);
+        } else if (inputValue < 0) {
+            setCounter(1);
+        } else {
+            setCounter(inputValue);
         }
     }
-    const onAdd = () => {
-        console.log("se agregó la siguiente cantidad de productos al carrito: " + counter);
-        console.log("stock quedo en: " + (stock - counter))
-    }
-    if (stock == 0) {
+    if (stock == counter) {
+
         return (
             <>
-                <div className="">
-                    <div>No disponemos de stock por el momento</div>
-                </div>
+                <Link to="/carrito">
+                    <button className="button-agregar" variant="primary" >  Terminar Compra  </button>
+                </Link>
+                <button className="button-agregar" variant="secondary" onClick={() => setCounter(initial)}>  Cancelar Compra </button>
             </>
         )
     }
-    if (stock > 0) {
-        return (
-            <>
-                <div className="">
-                    <button className="input" onClick={sumar}> + </button>
-                    <input type="number" className="input" value={counter}
-                        onChange={textNumer} initial={initial}></input>
-                    <button className="input" onClick={restar}> - </button>
-                    <button className="button-agregar" onClick={onAdd}>Agregar al carrito</button>
-                </div>
-            </>
-        )
-    }
+    //muestra en pantalla
+    return (
+        <>
+            <div className="">
+                <button className="input" onClick={restar}> - </button>
+                <input type="number" className="input" value={counter}
+                    onChange={onInputChange} initial={initial}></input>
+                <button className="input" onClick={sumar}> + </button>
+                <button className="button-agregar" onClick={onAdd}>Agregar al carrito</button>
+            </div>
+        </>
+    )
 }

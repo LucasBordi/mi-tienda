@@ -9,7 +9,7 @@ export const ItemDetailContainer = () => {
     useEffect(() => {
         fetch(`json/products.json`)
             .then(response => response.json())
-            .then(response => setProductos(response[{}]))
+            .then(response => setProductos(response))
         console.log(productos);
         console.log({ productos_id });
     }, [{ productos_id }]);
@@ -23,7 +23,7 @@ export const ItemDetailContainer = () => {
                             <>
                                 <span key={index}>
                                     <ItemDetail id={element.id} title={element.title} price={element.price}
-                                        stock={element.stock} img={element.pictureUrl}
+                                        stock={10} img={element.pictureUrl}
                                         description={element.description} />
                                 </span>
                             </>

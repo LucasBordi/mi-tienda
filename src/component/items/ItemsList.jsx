@@ -16,7 +16,7 @@ export const ItemsList = ({ items }) => {
                 <Item id={element.id} title={element.title} img={element.pictureUrl}
                   price={element.price} stock={element.stock} description={element.description} />
                 <button className="button">
-                  <Link to={`productos/${element.id, element.title, element.price, element.stock}`}>
+                  <Link to={`productos/${element.id}`}>
                     ver producto
                   </Link>
                 </button>
