@@ -5,7 +5,8 @@
     "pictureUrl": "../../../imagenes/Perfume-lavvan.jpeg",
     "price": 2000,
     "stock": 10,
-    "description": "Perfume es una exuberante mezcla de frutas y flores, despertando tu imaginación y desafiándote a soñar. La frambuesa silvestre y la grosella roja comienzan la experiencia de la fragancia con una jugosidad dulce y ácida. Suave y aromático, infunde al perfume un aire embriagador y sofisticado, profundizando el aroma con su sensualidad. Caprichoso y femenino, este es un perfume chispeante para los jóvenes de corazón."
+    "description": "Perfume es una exuberante mezcla de frutas y flores, despertando tu imaginación y desafiándote a soñar. La frambuesa silvestre y la grosella roja comienzan la experiencia de la fragancia con una jugosidad dulce y ácida. Suave y aromático, infunde al perfume un aire embriagador y sofisticado, profundizando el aroma con su sensualidad. Caprichoso y femenino, este es un perfume chispeante para los jóvenes de corazón.",
+    "category":"Perfumes"
   },
   {
     "id": 2,
@@ -13,63 +14,71 @@
     "pictureUrl": "../../../imagenes/Perfume-Kaika-hombre.jpeg",
     "price": 3000,
     "stock": 15,
-    "description":"Camino olfativo herbal, vibrante y bergamota. Al mover el cuerpo,el hombre manifiesta sus emociones y despierta sus sentidos.Cómo Usar: Para resaltar más el perfume,aplica en las muñecas, cuello, hombro y detrás de las orejas."
+    "description":"Camino olfativo herbal, vibrante y bergamota. Al mover el cuerpo,el hombre manifiesta sus emociones y despierta sus sentidos.Cómo Usar: Para resaltar más el perfume,aplica en las muñecas, cuello, hombro y detrás de las orejas.",
+    "category":"Perfumes"
   },
   {
     "id": 3,
     "title": "Perfume Hombre Kaika Urbe",
     "pictureUrl": "../../../imagenes/Perfume-Kaika-Urbe.jpeg",
-    "price": 3500,
+    "price": 2200,
     "stock": 20,
-    "description": "Una lograda combinación de notas frescas y acuáticas sobre un elegante fondo amaderado. Esta eau de toilette masculina y urbana te aporta la dosis de sofisticación indispensable en tu día a día. Notas frescas y acuáticas. Para lograr un efecto natural y duradero, vaporizar el perfume en las muñecas, el cuello o detrás de las orejas."
+    "description": "Una lograda combinación de notas frescas y acuáticas sobre un elegante fondo amaderado. Esta eau de toilette masculina y urbana te aporta la dosis de sofisticación indispensable en tu día a día. Notas frescas y acuáticas. Para lograr un efecto natural y duradero, vaporizar el perfume en las muñecas, el cuello o detrás de las orejas.",
+    "category":"Perfumes"
   },
   {
     "id": 4,
     "title": "Crema Ekos",
     "pictureUrl": "../../../imagenes/Crema-Ekos.jpeg",
-    "price": 3500,
+    "price": 300,
     "stock": 5,
-    "description": "Crema para piernas."
+    "description": "Crema para piernas.",
+    "category":"Cremas"
   },
   {
     "id": 5,
     "title": "Crema Ekos 2",
     "pictureUrl": "../../../imagenes/Crema-Ekos-2.jpeg",
-    "price": 3500,
+    "price": 500,
     "stock": 10,
-    "description": "Crema para manos, ideal para manos resecas."
+    "description": "Crema para manos, ideal para manos resecas.",
+    "category":"Cremas"
   },
   {
     "id": 6,
     "title": "Perfume Kaika Oceano",
     "pictureUrl": "../../../imagenes/Perfume-kaika-oceano.jpeg",
-    "price": 3500,
+    "price": 1500,
     "stock": 10,
-    "description": "Interpretación de la nota aromática que trae una faceta femenina en contraste con la frescura tónica acuosa y los toques salados. Fragancia que mezcla la fuerza del viento del mar para inspirar una mujer en equilibrio consigo misma y con todo su alrededor."
+    "description": "Interpretación de la nota aromática que trae una faceta femenina en contraste con la frescura tónica acuosa y los toques salados. Fragancia que mezcla la fuerza del viento del mar para inspirar una mujer en equilibrio consigo misma y con todo su alrededor.",
+    "category":"Perfumes"
   },
   {
     "id": 7,
     "title": "Perfume Mujer",
     "pictureUrl": "../../../imagenes/Perfume-marron.jpeg",
-    "price": 3500,
+    "price": 600,
     "stock": 10,
-    "description": "sdsadsgadhasjdhsjdhsajkhdhdhddfdsfdsfkdsjfggewhewgwgerfjhsdggwejkgwekwekj."
+    "description": "sdsadsgadhasjdhsjdhsajkhdhdhddfdsfdsfkdsjfggewhewgwgerfjhsdggwejkgwekwekj.",
+    "category":"Perfumes"
   },
   {
     "id": 8,
     "title": "Colonias Mujer",
     "pictureUrl": "../../../imagenes/Perfume-mujer-celeste.jpeg",
-    "price": 3500,
+    "price": 700,
     "stock": 11,
-    "description": "Colonia para mujeres, siente la naturaleza contigo."
+    "description": "Colonia para mujeres, siente la naturaleza contigo.",
+    "category":"Perfumes"
   },
   {
     "id": 9,
     "title": "Perfume Hombre",
     "pictureUrl": "../../../imagenes/Perfume-verde.jpeg",
-    "price": 3500,
+    "price": 1000,
     "stock": 14,
-    "description": "Lacoste Perfume Fragrance."
+    "description": "Lacoste Perfume Fragrance.",
+    "category":"Perfumes"
   },
   {
     "id": 10,
@@ -77,22 +86,25 @@
     "pictureUrl": "../../../imagenes/jabon-natural.jpeg",
     "price": 3500,
     "stock": 4,
-    "description": "Jabon natural , hecho con productos naturales sin ningun quimico extra agregado, sentiras un cambio en tu piel,varios aromas disponibles."
+    "description": "Jabon natural , hecho con productos naturales sin ningun quimico extra agregado, sentiras un cambio en tu piel,varios aromas disponibles.",
+    "category":"Productos de Belleza"
   },
   {
     "id": 11,
     "title": "Labial Becca",
     "pictureUrl": "../../../imagenes/Labial-becca.jpeg",
-    "price": 3500,
+    "price": 1300,
     "stock": 12,
-    "description": "Labial becca rojo intenso , gran duración."
+    "description": "Labial becca rojo intenso , gran duración.",
+    "category":"Productos de Belleza"
   },
   {
     "id": 12,
     "title": "Perfume Florales",
     "pictureUrl": "../../../imagenes/Esencia-floral.jpeg",
-    "price": 3500,
+    "price": 1010,
     "stock": 10,
-    "description": "Perfumes florales gran variedades consultar antes de comprar."
+    "description": "Perfumes florales gran variedades consultar antes de comprar.",
+    "category":"Perfumes"
   }
 ]

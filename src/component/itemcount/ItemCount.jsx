@@ -31,7 +31,7 @@ export function ItemCount({ stock, initial, onAdd }) {
             setCounter(inputValue);
         }
     }
-    if (stock == counter) {
+    if (stock === counter) {
 
         return (
             <>

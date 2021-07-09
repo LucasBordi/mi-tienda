@@ -1,8 +1,8 @@
-export const CartWidge = () => {
+
+export function CartWidget () {
     return (
-        <>
-            <h1>soy el carrito</h1>
-            <h2>Lista que muestra los productos a comprar</h2>
-        </>
+        <h3>
+            Carrito    
+        </h3>
     )
 }
