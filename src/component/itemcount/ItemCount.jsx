@@ -2,10 +2,9 @@ import { useState } from 'react';
 import './ItemCount.css'
 import { Link } from 'react-router-dom';
 
-export function ItemCount({ stock, initial, onAdd }) {
-
+export function ItemCount({ stock, initial }) {
     const [counter, setCounter] = useState(initial)
-
+    const [cantidad, setCantidad] = useState()
     const sumar = () => {
         if (counter < stock) {
             setCounter(counter + 1)
@@ -20,7 +19,6 @@ export function ItemCount({ stock, initial, onAdd }) {
         stock++
         console.log(`esto esta en el menos ${counter}`);
     }
-
     const onInputChange = (e) => {
         const inputValue = e.target.value;
         if (inputValue > stock) {
@@ -31,27 +29,32 @@ export function ItemCount({ stock, initial, onAdd }) {
             setCounter(inputValue);
         }
     }
-    if (stock === counter) {
-
-        return (
-            <>
-                <Link to="/carrito">
-                    <button className="button-agregar" variant="primary" >  Terminar Compra  </button>
-                </Link>
-                <button className="button-agregar" variant="secondary" onClick={() => setCounter(initial)}>  Cancelar Compra </button>
-            </>
-        )
+    const onAdd = () => {
+        setCantidad(counter)
+        console.log("se agregó la siguiente cantidad de productos al carrito: " + counter);
+        console.log("stock quedo en: " + (stock - counter))
     }
     //muestra en pantalla
     return (
         <>
-            <div className="">
-                <button className="input" onClick={restar}> - </button>
-                <input type="number" className="input" value={counter}
-                    onChange={onInputChange} initial={initial}></input>
-                <button className="input" onClick={sumar}> + </button>
-                <button className="button-agregar" onClick={onAdd}>Agregar al carrito</button>
-            </div>
+            {
+                stock >= cantidad
+                    ? (
+                        <>
+                            <Link to="/cart">
+                                <button className="d-block animated fadeIn" variant="primary" > Terminar compra  </button>
+                            </Link>
+                        </>
+                    )
+                    : (
+                        <div className="">
+                            <button className="input" onClick={restar}> - </button>
+                            <input type="number" className="input" value={counter} onChange={onInputChange} initial={initial}></input>
+                            <button className="input" onClick={sumar}> + </button>
+                            <button className="button-agregar" onClick={onAdd}>Agregar al carrito</button>
+                        </div>
+                    )
+            }
         </>
     )
 }

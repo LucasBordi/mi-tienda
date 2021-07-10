@@ -4,10 +4,8 @@ import './ItemDetailContainer.css';
 import { useParams } from 'react-router-dom';
 
 export const ItemDetailContainer = () => {
-
     const { id } = useParams()
     const [item, setItem] = useState({});
-
     useEffect(() => {
         const waitForData = async () => {
             const response = await fetch('/json/products.json');
@@ -20,12 +18,9 @@ export const ItemDetailContainer = () => {
         }
         waitForData();
     }, [id])
-
     return (
-        
-            <div className="container row col-12">
-                    <ItemDetail item={item} />
-            </div>
-        
+        <div className="container row col-12">
+            <ItemDetail item={item} />
+        </div>
     )
 }

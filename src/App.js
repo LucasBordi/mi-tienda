@@ -18,7 +18,7 @@ function App() {
             <Route path="/category/:id" component={ItemsListContainer}></Route>
             <Route path="/item/:id" component={ItemDetailContainer}></Route>
             <Route path="/Contacto" component={Contacto} />
-            <Route path="/Carrito" component={CartWidget} />
+            <Route path="/Cart" component={CartWidget} />
             <Route path="*" component={() => <h1>ERROR 404 !!! pagina no encontrada...</h1>} />
           </Switch>
         </BrowserRouter>
