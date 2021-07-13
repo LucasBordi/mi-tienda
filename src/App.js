@@ -8,9 +8,10 @@ import { ItemDetailContainer } from './container/itemdetailcontainer/ItemDetailC
 
 
 function App() {
+
   return (
     <div className="App">
-      <>
+      <shopComponentContext>
         <BrowserRouter>
           <NavbarComponent />
           <Switch>
@@ -22,7 +23,7 @@ function App() {
             <Route path="*" component={() => <h1>ERROR 404 !!! pagina no encontrada...</h1>} />
           </Switch>
         </BrowserRouter>
-      </>
+      </shopComponentContext>
     </div>
   )
 }

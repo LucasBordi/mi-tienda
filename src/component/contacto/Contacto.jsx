@@ -1,6 +1,9 @@
-import React from 'react'
+import {React,useContext} from 'react'
+import { CartContext } from './../../context/CartContext';
 
 const Contacto = () => {
+    const estadoGlobal = useContext(CartContext)
+    console.log(estadoGlobal);
     return (
         <div>
             <h1>Nuestros contactos</h1>

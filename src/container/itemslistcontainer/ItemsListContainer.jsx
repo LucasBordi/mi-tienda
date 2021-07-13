@@ -2,7 +2,10 @@ import { React, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { ItemsList } from '../itemslist/ItemsList';
 
+
 export const ItemsListContainer = () => {
+    
+
 
     const [items, setItems] = useState([]);
     let { id } = useParams()
@@ -12,7 +15,7 @@ export const ItemsListContainer = () => {
         const data = await response.json();
         return data;
     }
-    
+
     async function getProductsByCategory(category) {
         const response = await fetch('/json/products.json');
         const data = await response.json();

@@ -20,7 +20,7 @@ export const ItemDetailContainer = () => {
     }, [id])
     return (
         <div className="container row col-12">
-            <ItemDetail item={item} />
+            <ItemDetail item={item} id={id} />
         </div>
     )
 }

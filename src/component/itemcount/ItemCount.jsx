@@ -31,8 +31,13 @@ export function ItemCount({ stock, initial }) {
     }
     const onAdd = () => {
         setCantidad(counter)
-        console.log("se agregó la siguiente cantidad de productos al carrito: " + counter);
+       
+            console.log("se agregó la siguiente cantidad de productos al carrito: " + counter);
         console.log("stock quedo en: " + (stock - counter))
+    }
+
+    const reset = () => {
+        setCantidad(counter - setCounter(1))
     }
     //muestra en pantalla
     return (
@@ -42,16 +47,17 @@ export function ItemCount({ stock, initial }) {
                     ? (
                         <>
                             <Link to="/cart">
-                                <button className="d-block animated fadeIn" variant="primary" > Terminar compra  </button>
+                                <button className="button-agregar" variant="primary" > Terminar compra </button>
                             </Link>
+                            <button className="button-agregar" variant="primary" onClick={reset} > Cancelar Compra </button>
                         </>
                     )
                     : (
                         <div className="">
-                            <button className="input" onClick={restar}> - </button>
-                            <input type="number" className="input" value={counter} onChange={onInputChange} initial={initial}></input>
-                            <button className="input" onClick={sumar}> + </button>
-                            <button className="button-agregar" onClick={onAdd}>Agregar al carrito</button>
+                            <button className="button-agregar" onClick={restar}> - </button>
+                            <input type="text" className="button-agregar" value={counter} onChange={onInputChange} initial={initial}></input>
+                            <button className="button-agregar" onClick={sumar}> + </button>
+                            <button className="button-agregar" onClick={onAdd}> Agregar al carrito </button>
                         </div>
                     )
             }

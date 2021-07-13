@@ -5,7 +5,11 @@
     text-align: center;
 }
 .button-agregar{
-    background-color: blue;
+    background-color: black;
+    border: white solid 2px;
+    border-left-width: 10px;
+    border-radius: 15px;
+    border-right-width: 10px;
     color: white;
     font-size: 15px;
     text-align: center;
