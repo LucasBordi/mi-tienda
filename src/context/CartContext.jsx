@@ -1,25 +1,25 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 
 
 export const CartContext = createContext();
 
-export const ShopComponentContext = ({ Children }) => {
+function CartProvider({children}) {
 
-
-    const [listProducts, setListProducts] = useState([])
+    const [shoppingItem, setShoppingItem] = useState([])
     const [cart, setCart] = useState([])
 
- 
 
-    return <ShopComponentContext.Provider value={{ listProducts,  }}>
-        {Children}
-    </ShopComponentContext.Provider>
+
+    
+
+    return <CartProvider.Provider value={{ shoppingItem }}>
+       {children}
+    </CartProvider.Provider>
 
 }
 
-
- /*
- ver para firebase
+/*
+ ver para
  useEffect(() => {
         async function getData() {
             const DB = getFirestore();

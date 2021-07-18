@@ -2,19 +2,20 @@ import { useState } from 'react';
 import './ItemCount.css'
 import { Link } from 'react-router-dom';
 
-export function ItemCount({ stock, initial }) {
+export function ItemCount({ stock, initial, item }) {
     const [counter, setCounter] = useState(initial)
-    const [cantidad, setCantidad] = useState()
+    const [cantidad, setCantidad] = useState()   
+
     const sumar = () => {
         if (counter < stock) {
             setCounter(counter + 1)
-            console.log(`esta sumando ${counter}`);
+            console.log(`esta sumando ${counter + " " + item.title}`);
         }
     }
     const restar = () => {
         if (counter > 1) {
             setCounter(counter - 1)
-            console.log(`estas restando ${counter}`);
+            console.log(`estas restando ${counter + " " + item.title}`);
         }
         stock++
         console.log(`esto esta en el menos ${counter}`);
@@ -29,12 +30,15 @@ export function ItemCount({ stock, initial }) {
             setCounter(inputValue);
         }
     }
+   
+    
     const onAdd = () => {
         setCantidad(counter)
-       
-            console.log("se agregó la siguiente cantidad de productos al carrito: " + counter);
+        console.log("se agregó la siguiente cantidad de productos al carrito: " + counter + " " + item.title);
         console.log("stock quedo en: " + (stock - counter))
-    }
+        //console.log("esto esta en set productos" +setProductos);
+        
+    };
 
     const reset = () => {
         setCantidad(counter - setCounter(1))
