@@ -1,12 +1,9 @@
 import { React, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
-import { ItemsList } from '../itemslist/ItemsList';
-
+import { ItemsList } from '../itemslist/ItemsList'
 
 export const ItemsListContainer = () => {
-    
-
-
+  
     const [items, setItems] = useState([]);
     let { id } = useParams()
 
@@ -38,7 +35,6 @@ export const ItemsListContainer = () => {
         }
         waitForData();
     }, [id])
-
 
     return (
         <div className="container row col-12">

@@ -4,10 +4,10 @@ import { CartContext } from './../../context/CartContext';
 import {ItemCount} from './../itemcount/ItemCount';
 
 
-
-
 export const ItemDetail = (props) => {
-    const cartContext = useContext(CartContext);
+
+ //const CartContext = useContext(CartContext);
+ 
   
     const item = {
         id: props.id,

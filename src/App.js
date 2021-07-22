@@ -5,13 +5,14 @@ import { ItemsListContainer } from './container/itemslistcontainer/ItemsListCont
 import Contacto from './component/contacto/Contacto';
 import { CartWidget } from './component/cartwidget/CartWidget';
 import { ItemDetailContainer } from './container/itemdetailcontainer/ItemDetailContainer';
+import CustomProvider from './context/CartContext';
 
 
 function App() {
 
   return (
     <div className="App">
-      <shopComponentContext>
+      <CustomProvider>
         <BrowserRouter>
           <NavbarComponent />
           <Switch>
@@ -23,7 +24,7 @@ function App() {
             <Route path="*" component={() => <h1>ERROR 404 !!! pagina no encontrada...</h1>} />
           </Switch>
         </BrowserRouter>
-      </shopComponentContext>
+      </CustomProvider>
     </div>
   )
 }
