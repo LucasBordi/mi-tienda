@@ -17,7 +17,7 @@ function App() {
           <NavbarComponent />
           <Switch>
             <Route exact path="/" component={ItemsListContainer} greeting="holaaaaaaaaaa" />
-            <Route path="/category/:id" component={ItemsListContainer}></Route>
+            <Route path="/category/:category" component={ItemsListContainer}></Route>
             <Route path="/item/:id" component={ItemDetailContainer}></Route>
             <Route path="/Contacto" component={Contacto} />
             <Route path="/Cart" component={CartWidget} />

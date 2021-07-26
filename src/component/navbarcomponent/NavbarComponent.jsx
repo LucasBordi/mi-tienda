@@ -2,20 +2,23 @@ import '../../fonts/iconmoon.css';
 import './NavBarComponent.css';
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { getFirestore } from '../../firebase/client';
 
 export const NavbarComponent = () => {
 
     const [categories, setCategories] = useState([]);
-    useEffect(() => {
-        fetch('/json/categories.json')
-            .then((response) => response.json())
-            .then((response) => {
-                setTimeout(() => {
-                    setCategories(response);
-                    console.log(response);
-                }, 200)
-            })
+
+     useEffect(() => {
+      fetch('/json/categories.json')
+           .then((response) => response.json())
+           .then((response) => {
+               setTimeout(() => {
+                   setCategories(response);
+                   console.log(response);
+               }, 200)
+           })
     }, []);
+    
     return (
         <nav className="row navbar navbar-expand-lg  styleNavbar" >
             <Link to={`/`} className="navbar-brand text">
