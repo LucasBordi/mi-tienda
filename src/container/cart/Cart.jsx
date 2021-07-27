@@ -10,7 +10,7 @@ export const Cart = () => {
 
     return (
         !!cart.length
-            ? <div className="container col-12 d-flex flex-column justify-content-center  cart" >
+            ? <div className="container col-12 cart" >
                 {
                     cart.map(
                         obj => {
@@ -28,10 +28,10 @@ export const Cart = () => {
                     )
                 }
                 <div>TOTAL: {precioTotal()}</div>
-                <button onClick={Limpiar}>Vaciar Carrito</button>
+                <button className="cart-button" onClick={Limpiar}>Vaciar Carrito</button>
                 <div><Link to="/checkout">CHECKOUT </Link></div>
 
             </div>
-            : <div className="cart-button"><Link to="/">Agregar Productos </Link></div>
+            : <div className="cart-button"><Link className="cart" to="/">Agregar Productos</Link></div>
     )
 }

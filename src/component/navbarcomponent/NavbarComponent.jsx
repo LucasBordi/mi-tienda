@@ -9,17 +9,17 @@ export const NavbarComponent = () => {
 
     const [categories, setCategories] = useState([]);
 
-     useEffect(() => {
-      fetch('/json/categories.json')
-           .then((response) => response.json())
-           .then((response) => {
-               setTimeout(() => {
-                   setCategories(response);
-                   console.log(response);
-               }, 200)
-           })
+    useEffect(() => {
+        fetch('/json/categories.json')
+            .then((response) => response.json())
+            .then((response) => {
+                setTimeout(() => {
+                    setCategories(response);
+                    console.log(response);
+                }, 10)
+            })
     }, []);
-    
+
     return (
         <nav className="row navbar navbar-expand-lg  styleNavbar" >
             <Link to={`/`} className="navbar-brand text">
@@ -47,7 +47,7 @@ export const NavbarComponent = () => {
                 <Link to={`../contacto`} className="nav-link texto" tabindex="-1"
                     aria-disabled="true">Contactos
                 </Link>
-                <CartWidget/>
+                <CartWidget />
                 <form className="busqueda form-inline my-2 my-lg-0">
                     <input className="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search" />
                     <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar...</button>

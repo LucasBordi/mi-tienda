@@ -1,8 +1,8 @@
 .cart-button{
-  color: black;
-  background-color: white;
+  background-color: black;
+  border: white solid 3px;
+  color: white;
 }
-
 .cart-item {
   display: flex;
   flex-direction: row;
@@ -18,4 +18,9 @@
 .cart-item img {
   width: 10rem;
   height: auto;
+}
+
+a.cart{
+  color: white;
+  text-decoration: none;
 }

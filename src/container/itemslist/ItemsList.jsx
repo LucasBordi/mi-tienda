@@ -1,4 +1,3 @@
-import './ItemsList.css';
 import { Item } from '../../component/item/Item';
 
 export const ItemsList = ({ items }) => {
