@@ -1,9 +1,12 @@
-import { React, useEffect, useState } from 'react'
+import { React, useEffect, useState,useContext } from 'react'
 import { useParams } from 'react-router-dom';
 import { ItemsList } from '../itemslist/ItemsList'
 import { getFirestore } from '../../firebase/client';
+import { CartContext } from './../../context/CartContext';
 
 export const ItemsListContainer = () => {
+
+//const{item}=useContext(CartContext)
 
     const [items, setItems] = useState([]);
     const { category } = useParams()
@@ -20,7 +23,7 @@ export const ItemsListContainer = () => {
              console.log("category "+ category)
              const DB = getFirestore();
              const COLLECTION = DB.collection("productos")
-             const RESPONSE= COLLECTION.where('category', '==', category);
+             const RESPONSE= COLLECTION.where('category', '===', category);
             
              RESPONSE.get().then((r) => {
                  if(r.size === 0) {
@@ -32,7 +35,7 @@ export const ItemsListContainer = () => {
              return RESPONSE
          }
          
-         if (category == undefined) {
+         if (category === undefined) {
              getData();
          } else {
              getProductsByCategory(category);
@@ -41,8 +44,9 @@ export const ItemsListContainer = () => {
 
         console.log("esto es items "+items);
    
+   
         // ESTO ESTABA ANTES DE FIREBASE
-    /*    
+    /*
         async function getProducts() {
                 const response = await fetch('/json/products.json');
                 const data = await response.json();
@@ -71,9 +75,9 @@ export const ItemsListContainer = () => {
                 }
                 waitForData();
             }, [id])
-        
-           // ANTES DEL FIREBASE
         */
+           // ANTES DEL FIREBASE
+        
     return (
         <div className="container row col-12">
             <ItemsList items={items} />

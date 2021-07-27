@@ -3,14 +3,13 @@ import './ItemCount.css'
 import { Link } from 'react-router-dom';
 import { CartContext } from './../../context/CartContext';
 
-export function ItemCount({ stock, initial, item }) {
+export function ItemCount({ initial, item }) {
     const [counter, setCounter] = useState(initial)
-    const [cantidad, setCantidad] = useState()
 
-    const {onAddTocart}=useContext(CartContext)
+    const { addItem, quitarItem } = useContext(CartContext)
 
     const sumar = () => {
-        if (counter < stock) {
+        if (counter < item.stock) {
             setCounter(counter + 1)
             console.log(`esta sumando ${counter + " " + item.title}`);
         }
@@ -20,13 +19,12 @@ export function ItemCount({ stock, initial, item }) {
             setCounter(counter - 1)
             console.log(`estas restando ${counter + " " + item.title}`);
         }
-        stock++
         console.log(`esto esta en el menos ${counter}`);
     }
     const onInputChange = (e) => {
         const inputValue = e.target.value;
-        if (inputValue > stock) {
-            setCounter(stock);
+        if (inputValue > item.stock) {
+            setCounter(item.stock);
         } else if (inputValue < 0) {
             setCounter(1);
         } else {
@@ -35,20 +33,15 @@ export function ItemCount({ stock, initial, item }) {
     }
 
 
-    const onAdd = (e) => {
-         setCantidad(counter)
-         console.log("se agregó la siguiente cantidad de productos al carrito: " + counter + " " + item.title);
-         console.log("stock quedo en: " + (stock - counter))
-         //console.log("esto esta en set productos" +setProductos);
-         
-     }
- 
-    const reset = () => {
-        setCantidad(counter - setCounter(1))
-    }
     //muestra en pantalla
     return (
-        <>
+        <div>
+            <button className="button-agregar" onClick={restar}> - </button>
+            <input type="text" className="button-agregar" value={counter} onChange={onInputChange} initial={initial}></input>
+            <button className="button-agregar" onClick={sumar}> + </button>
+            <button className="button-agregar" onClick={() => { addItem(item, counter) }} > Agregar al carrito </button>
+        </div>
+        /*<>
             {
                 stock >= cantidad
                     ? (
@@ -64,10 +57,10 @@ export function ItemCount({ stock, initial, item }) {
                             <button className="button-agregar" onClick={restar}> - </button>
                             <input type="text" className="button-agregar" value={counter} onChange={onInputChange} initial={initial}></input>
                             <button className="button-agregar" onClick={sumar}> + </button>
-                            <button className="button-agregar" onClick={onAdd} > Agregar al carrito </button>
+                            <button className="button-agregar" onClick={()=>{addItem(item,counter)}} > Agregar al carrito </button>
                         </div>
                     )
             }
-        </>
+        </>*/
     )
 }

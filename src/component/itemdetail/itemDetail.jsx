@@ -12,7 +12,7 @@ export const ItemDetail = ({item}) => {
                         <h4 className="leader">{item.description}</h4>
                         <img className="imagen" src={item.pictureUrl} alt={item.title}></img>
                         <h4>Precio: $ {item.price}</h4>
-                        <ItemCount stock={item.stock} initial={1} item={item} />
+                        <ItemCount initial={1} item={item} />
                     </div>
                 </div>
             </>
