@@ -2,6 +2,7 @@
   background-color: black;
   border: white solid 3px;
   color: white;
+  margin: 15px 0px;
 }
 .cart-item {
   display: flex;

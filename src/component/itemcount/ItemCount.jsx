@@ -1,12 +1,11 @@
 import { useState, useContext } from 'react';
 import './ItemCount.css'
-import { Link } from 'react-router-dom';
 import { CartContext } from './../../context/CartContext';
 
 export function ItemCount({ initial, item }) {
     const [counter, setCounter] = useState(initial)
 
-    const { addItem, quitarItem } = useContext(CartContext)
+    const { addItem } = useContext(CartContext)
 
     const sumar = () => {
         if (counter < item.stock) {
@@ -32,7 +31,6 @@ export function ItemCount({ initial, item }) {
         }
     }
 
-
     //muestra en pantalla
     return (
         <div>
@@ -41,26 +39,5 @@ export function ItemCount({ initial, item }) {
             <button className="button-agregar" onClick={sumar}> + </button>
             <button className="button-agregar" onClick={() => { addItem(item, counter) }} > Agregar al carrito </button>
         </div>
-        /*<>
-            {
-                stock >= cantidad
-                    ? (
-                        <>
-                            <Link to="/cart">
-                                <button className="button-agregar" variant="primary" > Terminar compra </button>
-                            </Link>
-                            <button className="button-agregar" variant="primary" onClick={reset} > Cancelar Compra </button>
-                        </>
-                    )
-                    : (
-                        <div className="">
-                            <button className="button-agregar" onClick={restar}> - </button>
-                            <input type="text" className="button-agregar" value={counter} onChange={onInputChange} initial={initial}></input>
-                            <button className="button-agregar" onClick={sumar}> + </button>
-                            <button className="button-agregar" onClick={()=>{addItem(item,counter)}} > Agregar al carrito </button>
-                        </div>
-                    )
-            }
-        </>*/
     )
 }
