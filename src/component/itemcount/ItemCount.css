@@ -12,5 +12,9 @@
     border-right-width: 10px;
     color: white;
     font-size: 15px;
+    margin: 5px;
     text-align: center;
+}
+.compra{
+    color: white;
 }

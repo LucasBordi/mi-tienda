@@ -6,7 +6,7 @@ import Contacto from './component/contacto/Contacto';
 import { ItemDetailContainer } from './container/itemdetailcontainer/ItemDetailContainer';
 import CustomProvider from './context/CartContext';
 import { Cart } from './container/cartContainer/Cart';
-import { CheckoutForm } from './component/checkou/checkout';
+import { CheckOut } from './component/checkout/checkout';
 
 function App() {
 
@@ -21,7 +21,7 @@ function App() {
             <Route path="/item/:id" component={ItemDetailContainer}></Route>
             <Route path="/Contacto" component={Contacto} />
             <Route path="/Cart" component={Cart} />
-            <Route path="/CheckoutForm" component={CheckoutForm} />
+            <Route path="/Checkout" component={CheckOut} />
             <Route path="*" component={() => <h1>ERROR 404 !!! pagina no encontrada...</h1>} />
           </Switch>
         </BrowserRouter>

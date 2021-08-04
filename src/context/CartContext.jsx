@@ -64,7 +64,7 @@ const CustomProvider = ({ children }) => {
     return qty;
   }
   //para checkout
-  function createOrder(email, name, phone) {
+  async function createOrder(email, name, phone) {
     const order = {
       buyer: { email, name, phone },
       fecha: firebase.firestore.Timestamp.fromDate(new Date()),
@@ -73,7 +73,10 @@ const CustomProvider = ({ children }) => {
     };
     const db = getFirestore();
     db.collection("orders").add(order)
-
+    let respuesta=await db.collection("orders").get();
+    respuesta.docs.map((doc)=>{
+      console.log(doc.data());
+    })
   }
 
   return (

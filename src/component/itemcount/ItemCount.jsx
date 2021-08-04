@@ -1,6 +1,7 @@
 import { useState, useContext } from 'react';
 import './ItemCount.css'
 import { CartContext } from './../../context/CartContext';
+import { Link } from 'react-router-dom';
 
 export function ItemCount({ initial, item }) {
     const [counter, setCounter] = useState(initial)
@@ -31,13 +32,17 @@ export function ItemCount({ initial, item }) {
         }
     }
 
-    //muestra en pantalla
     return (
-        <div>
-            <button className="button-agregar" onClick={restar}> - </button>
-            <input type="text" className="button-agregar" value={counter} onChange={onInputChange} initial={initial}></input>
-            <button className="button-agregar" onClick={sumar}> + </button>
-            <button className="button-agregar" onClick={() => { addItem(item, counter) }} > Agregar al carrito </button>
-        </div>
+        <>
+            <div>
+                <button className="button-agregar" onClick={restar}> - </button>
+                <input type="text" className="button-agregar" value={counter} onChange={onInputChange} initial={initial}></input>
+                <button className="button-agregar" onClick={sumar}> + </button>
+            </div>
+            <div>
+                <button className="button-agregar" onClick={() => { addItem(item, counter) }} > Agregar al carrito </button>
+                <button className="button-agregar"><Link className="compra" to="/">Seguir comprando</Link></button>
+            </div>
+        </>
     )
 }

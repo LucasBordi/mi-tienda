@@ -4,12 +4,12 @@
     width: 200px;
 }
 
-.card {
+.cardDetail {
     background-color: black;
     border: white solid 3px;
     border-radius: 15px;
     color: white;
-    height: 500px;
+    height: 600px;
     justify-content: center;
     justify-items: baseline;
     margin: 10px;
@@ -19,6 +19,10 @@
 
 h2 {
     color: gold;
+}
+
+h2.title {
+    color: white;
 }
 
 .button {
@@ -31,10 +35,12 @@ h2 {
     text-decoration: none;
     width: 130px;
 }
-.container{
+
+.container {
     background-color: palevioletred;
 }
-a{
+
+a {
     color: black;
     text-decoration: none;
 }

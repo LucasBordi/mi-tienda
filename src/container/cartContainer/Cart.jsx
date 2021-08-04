@@ -7,7 +7,7 @@ export const Cart = () => {
     const [name, setName] = useState();
     const [email, setEmail] = useState();
     const [phone, setPhone] = useState();
-    const { cart, Limpiar, quitarItem, precioTotal } = useContext(CartContext);
+    const { cart, Limpiar, quitarItem, precioTotal, createOrder } = useContext(CartContext);
 
     return (
         !!cart.length
@@ -32,32 +32,14 @@ export const Cart = () => {
                 }
                 <div>TOTAL: {precioTotal()}</div>
                 <button className="cart-button" onClick={Limpiar}>Vaciar Carrito</button>
-                <div>
-                    <input
-                        type="text"
-                        placeholder="Nombre"
-                        onInput={(e) => { setName(e.target.value) }}
-                    />
-                    <input
-                        type="email"
-                        placeholder="nombre@ejemplo.com"
-                        onInput={(e) => { setEmail(e.target.value) }}
-                    />
-                    <input
-                        type="text"
-                        placeholder="1112345678"
-                        onInput={(e) => { setPhone(e.target.value) }}
-                    />
-                    <button className="cart-button"
-                        onClick={() => CartContext.createOrder({ name, phone, email })}
-                        block={true}
-                    >
-                        Confirmar Compra
-                    </button>
-                </div>
+                <Link className="cart-button" to="/checkout">Confirmar Compra</Link>
 
             </div>
-            : <div className="cart-button"><Link className="cart" to="/">Agregar Productos</Link></div>
+            :
+            <>
+                <h2 className="title">El carrito se encuentra vacio</h2>
+                <div className="cart-button"><Link className="cart" to="/">Agregar Productos</Link></div>
+            </>
     )
 
 }

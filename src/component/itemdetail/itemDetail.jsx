@@ -6,7 +6,7 @@ export const ItemDetail = ({ item }) => {
 
     return (
         <>
-            <div className="card row col-12 ">
+            <div className="cardDetail row col-12 ">
                 <div>
                     <h2>{item.title}</h2>
                     <h4 className="leader">{item.description}</h4>
