@@ -6,7 +6,7 @@ import Contacto from './component/contacto/Contacto';
 import { ItemDetailContainer } from './container/itemdetailcontainer/ItemDetailContainer';
 import CustomProvider from './context/CartContext';
 import { Cart } from './container/cartContainer/Cart';
-import { CheckOut } from './component/checkout/checkout';
+import { CheckOut } from './component/checkout/Checkout';
 
 function App() {
 

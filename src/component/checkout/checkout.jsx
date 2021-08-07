@@ -1,16 +1,15 @@
 import React, { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import { CartContext } from '../../context/CartContext';
-import './checkout.css';
+import './Checkout.css';
 
 export const CheckOut = () => {
     const { createOrder } = useContext(CartContext);
-
     const context = useContext(CartContext);
     const [name, setName] = useState();
     const [email, setEmail] = useState();
     const [phone, setPhone] = useState();
 
-  
     let items = context.cart.map(
         (obj) => {
             return {
@@ -23,58 +22,67 @@ export const CheckOut = () => {
     )
 
     return (
-
         <>
-            <input
-                type="text"
-                placeholder="Nombre"
-                onInput={(e) => { setName(e.target.value) }}
-            />
-            <input
-                type="email"
-                placeholder="nombre@ejemplo.com"
-                onInput={(e) => { setEmail(e.target.value) }}
-            />
-            <input
-                type="text"
-                placeholder="1112345678"
-                onInput={(e) => { setPhone(e.target.value) }}
-            />
-            
-
-            <h3>REVISION DE SU COMPRA</h3>
-            <div className="">
-                <h3 className="title-productos">
-                    <span >Producto</span>
-                    <span>Cantidad</span>
-                    <span>Precio por unidad</span>
-                    <span>Subtotal:</span>
-                </h3>
-                {
-                    context.cart.map(
-                        (obj) => {
-                            return (
-                                <div className="listado-productos col-10" key={obj.item.id}>
-                                    <span> {obj.item.title} </span>
-                                    <span> {obj.cantidad}</span>
-                                    <span> $ {obj.item.price} </span>
-                                    <span> $ {obj.item.price * obj.cantidad}</span>
-                                </div>
-                            );
-                        }
-                    )
-                }
-                <div className="checkout-order__total">Total: $ {context.precioTotal()}</div>
+            <h3>REVISION DE SU PRODUCTOS</h3>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio por unidad</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        context.cart.map(
+                            (obj) => {
+                                return (
+                                    <tr className="listado-productos col-10" key={obj.item.id}>
+                                        <td> {obj.item.title} </td>
+                                        <td> {obj.cantidad}</td>
+                                        <td> $ {obj.item.price} </td>
+                                        <td> $ {obj.item.price * obj.cantidad}</td>
+                                    </tr>
+                                );
+                            }
+                        )
+                    }
+                </tbody>
+            </table>
+            <div className="cart-button">Total: $ {context.precioTotal()}</div>
+            <div>
+                <h3>COMPLETE EL FORMULARIO PARA FINALIZAR SU COMPRA</h3>
+                <div>
+                    <input
+                        type="text"
+                        placeholder="Nombre y Apellido"
+                        onInput={(e) => { setName(e.target.value) }}
+                    />
+                </div>
+                <div>
+                    <input
+                        type="email"
+                        placeholder="nombre@ejemplo.com"
+                        onInput={(e) => { setEmail(e.target.value) }}
+                    />
+                </div>
+                <div>
+                    <input
+                        type="text"
+                        placeholder="1112345678"
+                        onInput={(e) => { setPhone(e.target.value) }}
+                    />
+                </div>
+                <button className="cart-button"
+                    onClick={() => createOrder(name, phone, email, items)}
+                    block={true}
+                >
+                    Finalizar Compra
+                </button>
             </div>
-            <button className="cart-button"
-                onClick={() => createOrder(name, phone, email)}
-                block={true}
-            >
-                Finalizar Compra
-            </button>
-
+            <Link className=" cart cart-button" to="/">Volver al inicio</Link>
         </>
-
     );
 };
 

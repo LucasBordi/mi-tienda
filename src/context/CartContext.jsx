@@ -27,13 +27,11 @@ const CustomProvider = ({ children }) => {
     const index = cart.findIndex(obj => obj.item.id === item.id)
     if (index === -1) {
       setCart([...cart, { item, cantidad }])
-
     }
     else {
       setCart(() => {
         cart[index].cantidad = cantidad
         return [...cart]
-
       })
     }
   }
@@ -46,7 +44,6 @@ const CustomProvider = ({ children }) => {
     const filteredCart = cart.filter((obj) => obj.item.id !== id);
     setCart(filteredCart);
   }
-
 
   function precioTotal() {
     const valor = cart.reduce((acumulador, obj) => {
@@ -64,17 +61,16 @@ const CustomProvider = ({ children }) => {
     return qty;
   }
   //para checkout
-  async function createOrder(email, name, phone) {
+  async function createOrder(name, phone, email, items) {
     const order = {
-      buyer: { email, name, phone },
+      buyer: { name, phone, email, items },
       fecha: firebase.firestore.Timestamp.fromDate(new Date()),
-      item: items,
       total: getTotalQty()
     };
     const db = getFirestore();
     db.collection("orders").add(order)
-    let respuesta=await db.collection("orders").get();
-    respuesta.docs.map((doc)=>{
+    let respuesta = await db.collection("orders").get();
+    respuesta.docs.map((doc) => {
       console.log(doc.data());
     })
   }

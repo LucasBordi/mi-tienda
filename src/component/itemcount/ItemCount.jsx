@@ -41,7 +41,7 @@ export function ItemCount({ initial, item }) {
             </div>
             <div>
                 <button className="button-agregar" onClick={() => { addItem(item, counter) }} > Agregar al carrito </button>
-                <button className="button-agregar"><Link className="compra" to="/">Seguir comprando</Link></button>
+                <button className="button-agregar"><Link className=" cart compra" to="/">Seguir comprando</Link></button>
             </div>
         </>
     )

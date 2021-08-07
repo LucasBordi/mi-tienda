@@ -1,27 +1,38 @@
-.cart-button{
+.cart-button {
   background-color: black;
   border: white solid 3px;
+  border-radius: 5px;
   color: white;
-  margin: 15px 0px;
+  margin: 15px 15px;
+  padding: 0px 5px;
 }
+
+.cart-cruz {
+  background-color: red;
+  border-color: white;
+  color: white;
+}
+
 .cart-item {
+  align-items: center;
+  background-color: black;
+  border: white solid 3px;
+  border-radius: 5px;
+  color: white;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  background-color: black;
   margin: 1rem 0;
   padding: 1rem;
-  color: white;
   width: 100%;
 }
 
 .cart-item img {
-  width: 10rem;
   height: auto;
+  width: 10rem;
 }
 
-a.cart{
+a.cart {
   color: white;
   text-decoration: none;
 }

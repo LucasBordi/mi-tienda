@@ -1,20 +1,17 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import './Cart.css';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
 
 export const Cart = () => {
-    const [name, setName] = useState();
-    const [email, setEmail] = useState();
-    const [phone, setPhone] = useState();
-    const { cart, Limpiar, quitarItem, precioTotal, createOrder } = useContext(CartContext);
+    const { cart, Limpiar, quitarItem, precioTotal } = useContext(CartContext);
 
     return (
         !!cart.length
             ? <div className="container col-12 cart" >
                 {
                     cart.map(
-                        obj => {
+                        (obj) => {
                             return (
                                 <div className="cart-item" key={obj.item.id}>
                                     <h2>{obj.item.title}</h2>
@@ -24,15 +21,15 @@ export const Cart = () => {
                                     <span>Precio: {obj.item.price}</span>
                                     <span>Subtotal: {obj.item.price * obj.cantidad}</span>
                                     <img src={obj.item.pictureUrl} alt={obj.item.title} />
-                                    <button onClick={() => quitarItem(obj.item.id)}>X</button>
+                                    <button className="cart-cruz" onClick={() => quitarItem(obj.item.id)}>X</button>
                                 </div>
                             )
                         }
                     )
                 }
-                <div>TOTAL: {precioTotal()}</div>
+                <div className="cart-button">TOTAL: {precioTotal()}</div>
                 <button className="cart-button" onClick={Limpiar}>Vaciar Carrito</button>
-                <Link className="cart-button" to="/checkout">Confirmar Compra</Link>
+                <Link className="cart-button cart" to="/checkout">Confirmar Compra</Link>
 
             </div>
             :
