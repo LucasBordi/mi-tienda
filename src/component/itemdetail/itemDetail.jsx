@@ -2,6 +2,7 @@ import { React } from 'react';
 import './ItemDetail.css';
 import { ItemCount } from './../itemcount/ItemCount';
 
+
 export const ItemDetail = ({ item }) => {
 
     return (

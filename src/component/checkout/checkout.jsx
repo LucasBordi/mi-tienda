@@ -81,7 +81,7 @@ export const CheckOut = () => {
                     Finalizar Compra
                 </button>
             </div>
-            <Link className=" cart cart-button" to="/">Volver al inicio</Link>
+            <Link className="cart cart-button" to="/">Volver al inicio</Link>
         </>
     );
 };

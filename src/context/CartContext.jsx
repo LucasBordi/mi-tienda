@@ -2,6 +2,7 @@ import React, { createContext, useState, useEffect } from "react";
 import { getFirestore } from "../firebase/client";
 import firebase from "firebase/app";
 import "@firebase/firestore";
+import swal from 'sweetalert';
 
 export const CartContext = createContext();
 const { Provider } = CartContext
@@ -33,6 +34,7 @@ const CustomProvider = ({ children }) => {
         cart[index].cantidad = cantidad
         return [...cart]
       })
+      mostrarAlert()
     }
   }
 
@@ -60,6 +62,26 @@ const CustomProvider = ({ children }) => {
     });
     return qty;
   }
+
+  const mostrarAlert = () => {
+    swal({
+      title: "Producto agregado",
+      text: "El producto fue agregado al carrrito con exito",
+      icon: "success",
+      button: "aceptar",
+      timer: "2000"
+    })
+  }
+
+  const ordenAlert = () => {
+    swal({
+      title: "Orden de compra",
+      text: "Su orden de compra fue aprobada, presione en el boton inicio para volver a comprar",
+      icon: "success",
+      button: "ACEPTAR"
+    })
+  }
+
   //para checkout
   async function createOrder(name, phone, email, items) {
     const order = {
@@ -73,10 +95,11 @@ const CustomProvider = ({ children }) => {
     respuesta.docs.map((doc) => {
       console.log(doc.data());
     })
+    ordenAlert()
   }
 
   return (
-    <Provider value={{ cart, addItem, Limpiar, quitarItem, precioTotal, getTotalQty, items, createOrder }}>
+    <Provider value={{ cart, addItem, Limpiar, quitarItem, precioTotal, getTotalQty, items, createOrder, mostrarAlert }}>
       {children}
     </Provider>
   )

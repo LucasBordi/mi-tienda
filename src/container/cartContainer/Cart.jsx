@@ -38,5 +38,5 @@ export const Cart = () => {
                 <div className="cart-button"><Link className="cart" to="/">Agregar Productos</Link></div>
             </>
     )
-
+    
 }
