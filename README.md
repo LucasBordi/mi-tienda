@@ -1,6 +1,6 @@
 # REACT DEMO STORE
 Este proyecto es el resultado del curso de React con la gente de Coder House.
-[![React Demo Store](https://img.youtube.com/vi/n58VO8NMKtA/1.jpg)](https://youtu.be/n58VO8NMKtA)
+[![React Demo Store](https://img.youtube.com/vi/n58VO8NMKtA/0.jpg)](https://youtu.be/n58VO8NMKtA)
 
 
 # Getting Started with Create React App
